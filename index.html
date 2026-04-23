@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Primera Comunión</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,7 +13,7 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, #556b2f 0%, #6b8e23 70%, #ffffff 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -29,6 +30,7 @@
             font-size: 3em;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Dancing Script', cursive;
         }
         p {
             font-size: 1.2em;
@@ -52,8 +54,8 @@
         .button {
             display: inline-block;
             padding: 12px 30px;
-            background-color: white;
-            color: #f5576c;
+            background-color: #556b2f;
+            color: white;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
@@ -63,12 +65,38 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
+        .event-date {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-family: 'Dancing Script', cursive;
+            background: rgba(255,255,255,0.7);
+            padding: 10px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            color: #333;
+        }
+        .olive {
+            font-size: 2em;
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+        .elena-img {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>¡Mi Primera Comunión!</h1>
+   
+   
         <p>Únete a nosotros para celebrar este día especial.</p>
+        <img src="elena.png" alt="Elena" class="elena-img">
+        <p class="event-date">Viernes 1 Mayo a las 13.30</p>
         <div class="countdown" id="countdown">
             <!-- Countdown will be inserted here -->
         </div>
@@ -80,7 +108,7 @@
 
     <script>
         // Set the date we're counting down to
-        const countDownDate = new Date("May 1, 2026 10:00:00").getTime();
+        const countDownDate = new Date("May 1, 2026 13:30:00").getTime();
 
         // Update the count down every 1 second
         const x = setInterval(function() {
