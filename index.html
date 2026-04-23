@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elena Web</title>
+    <title>Mi Primera Comunión</title>
     <style>
         * {
             margin: 0;
@@ -12,16 +12,18 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
         .container {
             text-align: center;
             color: white;
             padding: 40px;
+            max-width: 800px;
         }
         h1 {
             font-size: 3em;
@@ -33,11 +35,25 @@
             margin-bottom: 30px;
             opacity: 0.9;
         }
+        .countdown {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        .time {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+        }
+        .address {
+            margin-bottom: 30px;
+        }
         .button {
             display: inline-block;
             padding: 12px 30px;
             background-color: white;
-            color: #667eea;
+            color: #f5576c;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
@@ -51,10 +67,53 @@
 </head>
 <body>
     <div class="container">
-        <h1>🚀 Elena Web</h1>
-        <p>Welcome to your GitHub Page!</p>
-        <p>This is your starter page. Edit the HTML to make it your own.</p>
-        <a href="https://github.com/jonzamoreno/elenaweb" class="button">View on GitHub</a>
+        <h1>¡Mi Primera Comunión!</h1>
+        <p>Únete a nosotros para celebrar este día especial.</p>
+        <div class="countdown" id="countdown">
+            <!-- Countdown will be inserted here -->
+        </div>
+        <div class="address">
+            <p><strong>Lugar:</strong> Finca Almodóvar Carretera de, km 3,5, Churriana, 29130 Cártama, Málaga</p>
+            <a href="https://maps.app.goo.gl/tpTGymdJ6S554Csh7" class="button" target="_blank">Ver en Google Maps</a>
+        </div>
     </div>
+
+    <script>
+        // Set the date we're counting down to
+        const countDownDate = new Date("May 1, 2026 10:00:00").getTime();
+
+        // Update the count down every 1 second
+        const x = setInterval(function() {
+
+            // Get today's date and time
+            const now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            const distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="countdown"
+            document.getElementById("countdown").innerHTML = 
+                "<div class='time'>" + days + "<br>Días</div>" +
+                "<div class='time'>" + hours + "<br>Horas</div>" +
+                "<div class='time'>" + minutes + "<br>Minutos</div>" +
+                "<div class='time'>" + seconds + "<br>Segundos</div>";
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "¡El evento ha comenzado!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+</head>
+<body>
 </body>
 </html>
